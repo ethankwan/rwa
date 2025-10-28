@@ -41,7 +41,7 @@ I chose **AWS Glue Notebook** with **Spark** for the following reasons:
 
 3. **Stream-to-lake sink** writes raw events to the **data lake**, ensuring durability and enabling historical recomputation.
 
-4. **Batch ETL jobs** read from the **data lake**, compute long-range aggregates, and push them into the **columnar warehouse**.
+4. **Batch ETL jobs** read from the **data lake**, precompute aggregates at various granularities, and push them into the **warehouse**.
 
 5. **API Layer** routes queries to cache or warehouse layer based on range / granularity.
 
@@ -57,7 +57,7 @@ Hot Cache Updates   Data Lake (Iceberg / Delta Lake)
     │               Raw Event Data (Data Lake)
     │                │
     │                ▼
-    │               Columnar Warehouse (Redshift / BigQuery)
+    │               Data Warehouse (Redshift / BigQuery)
     │                │
     │                ▼
     └─────────► API Layer ─────► Frontend / Charts
