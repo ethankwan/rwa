@@ -29,7 +29,7 @@ I chose **AWS Glue Notebook** with **Spark** for the following reasons:
   Instead of hardcoding the ERC-20 `Transfer` topic hash, I’d add a small utility to compute Keccak-256 hashes from event signatures for easier extension to new event types or token standards.
 
 - **Config-driven schemas and transformations**  
-  I’d move schema definitions and column selections into external config files, so the transformation logic stays clean and easy to maintain. This would also make it simpler to adjust to schema changes or new data sources down the line.
+  I’d move schema definitions, column selections, and output format into external config files so the transformation logic stays clean and easy to maintain. This would also make it simpler to adjust to schema changes or new data sources down the line.
   
 
 
