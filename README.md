@@ -5,8 +5,8 @@
 1. **AWS Account & Glue Notebook**
    - Ensure you have access to an AWS account with Glue Notebook permissions.
 2. **Create Service Role**
-   - For proof-of-concept, I used the managed `AWSGlueServiceNotebookRole` with `AmazonS3FullAccess`.
-   - **Note:** To enable notebook sessions, the service role must either be prefixed with `AWSGlueServiceNotebookRole`, or include a policy granting `iam:PassRole` permission.
+   - For proof-of-concept, I just added the managed policies `AWSGlueServiceNotebookRole` and `AmazonS3FullAccess`.
+   - **Note:** To enable notebook sessions, the [service role](https://docs.aws.amazon.com/glue/latest/dg/create-an-iam-role-notebook.html) must either be prefixed with `AWSGlueServiceNotebookRole` or include a policy granting `iam:PassRole` permission.
 3. **Load & Execute**
    - Load the provided Spark script into the Glue Notebook and execute.  
    - Set `OUTPUT_BASE` to desired output S3 Bucket.
